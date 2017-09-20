@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-print("Test", "added", "second")
-=======
-print("Test", "added")
->>>>>>> refs/remotes/origin/master
+print("Test", "added", "second", "third")
 
 class Test():
     
