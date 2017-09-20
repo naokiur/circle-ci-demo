@@ -1,4 +1,4 @@
-print("Test", "added")
+print("Test", "added", "second")
 
 class Test():
     
