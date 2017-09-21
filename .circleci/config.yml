@@ -50,7 +50,8 @@ jobs:
       - run:
           name: Pylintによるコード解析（予定）
           command: |
-            echo will execute pylint
+            . venv/bin/activate
+            pylint manage.py
 
       - store_artifacts:
           path: test-reports
