@@ -50,6 +50,7 @@ jobs:
       - run:
           name: Pylintによるコード解析（予定）
           command: |
+            mkdir -p /home/circleci/repo/test-reports/
             . venv/bin/activate
             pylint manage.py > /home/circleci/repo/test-reports/result_pylint.log
 
