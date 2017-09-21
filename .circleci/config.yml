@@ -48,9 +48,9 @@ jobs:
 
       # run pylint!
       - run:
-          name: Pylintによるコード解析
+          name: Pylintによるコード解析（予定）
           command: |
-            pylint *.py
+            echo will execute pylint
 
       - store_artifacts:
           path: test-reports
