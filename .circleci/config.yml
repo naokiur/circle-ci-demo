@@ -51,7 +51,7 @@ jobs:
           name: Pylintによるコード解析（予定）
           command: |
             . venv/bin/activate
-            pylint manage.py
+            pylint manage.py > /home/circleci/repo/test-reports/result_pylint.log
 
       - store_artifacts:
           path: test-reports
