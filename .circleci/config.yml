@@ -53,6 +53,7 @@ jobs:
       # run pylint!
       - run:
           name: Pylintによるコード解析
-          command: pylint *.py
+          command: |
+            pylint *.py
 
           
