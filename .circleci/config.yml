@@ -52,6 +52,7 @@ jobs:
           command: |
             mkdir -p /home/circleci/repo/test-reports/
             . venv/bin/activate
+            pylint --generate-rcfile > ~/.pylintrc
             pylint manage.py > /home/circleci/repo/test-reports/result_pylint.log
 
       - store_artifacts:
