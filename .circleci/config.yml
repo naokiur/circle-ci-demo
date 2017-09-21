@@ -53,8 +53,7 @@ jobs:
             mkdir -p /home/circleci/repo/test-reports/
             . venv/bin/activate
             pylint --generate-rcfile > ~/.pylintrc
-            # find /home/circleci/repo -name "*.py" |xargs pylint >> /home/circleci/repo/test-reports/result_pylint.log
-            find /home/circleci/repo -name "*.py"
+            find /home/circleci/repo/mysite -name "*.py" |xargs pylint >> /home/circleci/repo/test-reports/result_pylint.log
 
       - store_artifacts:
           path: test-reports
