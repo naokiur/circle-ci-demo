@@ -44,10 +44,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python manage.py test
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports      
+            python manage.py test  
 
       # run pylint!
       - run:
@@ -58,3 +55,7 @@ jobs:
             pylint --generate-rcfile > ~/.pylintrc
             find /home/circleci/repo -type d -name venv -prune -o -type f -name "*.py" -print|xargs pylint >> /home/circleci/repo/test-reports/result_pylint.log
  
+      - store_artifacts:
+          path: test-reports
+          destination: test-reports    
+          
