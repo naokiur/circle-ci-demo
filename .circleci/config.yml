@@ -39,15 +39,6 @@ jobs:
             - ./venv
           key: v1-dependencies-{{ checksum "requirements.txt" }}
         
-      # run pylint!
-      - run:
-          name: Pylintによるコード解析（予定）
-          command: |
-            mkdir -p /home/circleci/repo/test-reports/
-            . venv/bin/activate
-            pylint --generate-rcfile > ~/.pylintrc
-            find /home/circleci/repo -type d -name venv -prune -o -type f -name "*.py" -print|xargs pylint >> /home/circleci/repo/test-reports/result_pylint.log
-
       # run tests!
       - run:
           name: run tests
@@ -56,4 +47,14 @@ jobs:
             python manage.py test
       - store_artifacts:
           path: test-reports
-          destination: test-reports       
+          destination: test-reports      
+
+      # run pylint!
+      - run:
+          name: Pylintによるコード解析（予定）
+          command: |
+            mkdir -p /home/circleci/repo/test-reports/
+            . venv/bin/activate
+            pylint --generate-rcfile > ~/.pylintrc
+            find /home/circleci/repo -type d -name venv -prune -o -type f -name "*.py" -print|xargs pylint >> /home/circleci/repo/test-reports/result_pylint.log
+ 
