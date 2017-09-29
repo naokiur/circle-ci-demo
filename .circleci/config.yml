@@ -33,7 +33,6 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
-
       - save_cache:
           paths:
             - ./venv
@@ -44,8 +43,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python manage.py test  
-
+            python manage.py test
       # run pylint!
       - run:
           name: Pylintによるコード解析（予定）
@@ -54,8 +52,6 @@ jobs:
             . venv/bin/activate
             pylint --generate-rcfile > ~/.pylintrc
             find /home/circleci/repo -type d -name venv -prune -o -type f -name "*.py" -print|xargs pylint >> /home/circleci/repo/test-reports/result_pylint.log
- 
       - store_artifacts:
           path: test-reports
-          destination: test-reports    
-          
+          destination: test-reports
