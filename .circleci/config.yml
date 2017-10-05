@@ -56,7 +56,7 @@ jobs:
       - run:
           name: ESLintによるコード解析（予定）
           command: |
-            eslint src/*
+            node_modules/.bin/eslint src/*
 
       # run tests!
       - run: yarn test
@@ -105,8 +105,7 @@ jobs:
           command: |
             mkdir -p /home/circleci/repo/test-reports/
             . venv/bin/activate
-            pylint --generate-rcfile > ~/.pylintrc
-            find /home/circleci/repo -type d -name venv -prune -o -type f -name "*.py" -print|xargs pylint >> /home/circleci/repo/test-reports/result_pylint.log
+            find /home/circleci/repo -type d -name venv -prune -o -type f -name "*.py" -print|xargs pylint
 workflows:
   version: 2
   vue-and-django:
