@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  build-JS:
+  build-vue:
     docker:
       - image: circleci/node:7.10
 
@@ -22,7 +22,7 @@ jobs:
 
       # run ESLint!
       - run:
-          name: ESLintによるコード解析（予定）
+          name: ESLintによるコード解析
           command: |
             node_modules/.bin/eslint src/*
 
@@ -35,7 +35,7 @@ jobs:
           - v1-dependencies-{{ checksum "package.json" }}
 
 
-  build-Python:
+  build-python:
     docker:
       - image: circleci/python:3.6.1
 
@@ -79,5 +79,5 @@ workflows:
   version: 2
   vue-and-django:
     jobs:
-      - build-JS
-      - build-Python
+      - build-vue
+      - build-python
