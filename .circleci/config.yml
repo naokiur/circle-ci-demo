@@ -45,12 +45,12 @@ jobs:
             . venv/bin/activate
             pip install -r requirements.txt
 
+      - run: yarn install
+
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
-      - run: yarn install
 
       # run tests!
       - run:
@@ -58,6 +58,7 @@ jobs:
           command: |
             . venv/bin/activate
             python manage.py test
+
       # run pylint!
       - run:
           name: Pylintによるコード解析（予定）
