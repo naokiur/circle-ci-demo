@@ -111,6 +111,4 @@ workflows:
   vue-and-django:
     jobs:
       - build-JS
-      - build-Python:
-        requires:
-          - build-JS
+      - build-Python
