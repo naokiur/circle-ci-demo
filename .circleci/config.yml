@@ -67,6 +67,7 @@ jobs:
       - run:
           name: Pylintによるコード解析
           command: |
+            . venv/bin/activate
             find /home/circleci/repo -type d -name venv -prune -o -type f -name "*.py" -print|xargs pylint
 
       - restore_cache:
