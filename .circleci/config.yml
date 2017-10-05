@@ -112,3 +112,5 @@ workflows:
     jobs:
       - build-JS
       - build-Python
+          requires:
+            - build-JS
