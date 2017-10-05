@@ -58,14 +58,14 @@ jobs:
 
       # run tests!
       - run:
-          name: run tests
+          name: Django tests
           command: |
             . venv/bin/activate
             python manage.py test
 
       # run pylint!
       - run:
-          name: Pylintによるコード解析（予定）
+          name: Pylintによるコード解析
           command: |
             mkdir -p /home/circleci/repo/test-reports/
             . venv/bin/activate
