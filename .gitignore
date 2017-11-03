@@ -14,7 +14,7 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
-build/*
+build/.*
 
 db.sqlite3
 package-lock.json
