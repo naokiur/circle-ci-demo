@@ -4,9 +4,9 @@ export default {
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      meta: {title: 'Hello'},
-      component: () => import(/* webpackChunkName: "hello" */'./components/Hello.vue')
+      name: 'Login',
+      meta: {title: 'Login'},
+      component: () => import(/* webpackChunkName: "hello" */'./pages/Login.vue')
     }
   ]
 }
