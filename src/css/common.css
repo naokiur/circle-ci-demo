@@ -1,0 +1,160 @@
+  /****固定ヘッダー****/
+  html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: scroll;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:45px;
+    background-color: #438EB9;
+    z-index:2;
+  }
+  .rv-wrapper{
+    height: 100%;
+    padding: 1rem;
+    padding-top:3.5rem;
+    overflow: auto;
+  }
+
+  /****ページトランジション設定****/
+  .fade-enter,.fade-leave-to{
+    opacity: 0.2;
+  }
+  .fade-enter-active, .fade-leave-active{
+    transition: opacity .1s;
+  }
+
+  /****レイアウト基本****/
+  .button_area{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .button_area>div{
+    width: 64px;
+    margin-bottom: .4rem;
+    margin-right: 5px;
+  }
+  .button_area .el-button+.el-button{
+    margin-top: 5px;
+    margin-left: 0
+  }
+  section:nth-child(n + 2){
+    margin-top:1.5rem;
+  }
+  /****formは基本10rem*****/
+  /*
+  .el-input,el-select,
+  .el-date-editor.el-input{
+    width:10rem;
+  }
+  */
+  .el-select-dropdown__item{
+    height: 26px;
+    display:flex;
+    align-items: center;
+   /* padding: 3px 10px; */
+  }
+
+
+  /****form のラベルを独自作成 ****/
+  .el-form-item{
+    text-align:left;
+    margin-bottom:.2rem;
+  }
+  .el-form-item--small .el-form-item__label,
+  .el-form-item  label{
+    background-color: #3A87AD;
+    color:#fff;
+    margin-right: .1rem;
+    margin-top: .1rem;
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 5px 5px 5px 0;
+    box-sizing: border-box;
+    font-weight: bold;
+  }
+  .el-form-item  label i{
+    margin-right: .2rem;
+  }
+  .el-form-item__content{
+    margin: 0 !important;
+  }
+
+
+  /****真四角ボタンの設定***/
+  .el-button{
+    font-weight:bold;
+  }
+  .el-button.box_btn i{
+    font-size: 24px;
+    line-height: 24px;
+    margin: 0;
+    display: block;
+  }
+  /****テーブルのラベルはセンタリング***/
+  .el-table {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .el-table th>.cell {
+    text-align: center;
+  }
+
+  .el-table th,.el-table__fixed-header-wrapper thead div ,
+  .el-table__header-wrapper thead div{
+    background-color: #eef1f6;
+    color: #777;
+  }
+  .el-table th:hover,.el-table__fixed-header-wrapper thead div:hover,
+  .el-table__header-wrapper thead div:hover{
+    color: #547ea8;
+  }
+  .el-input--small,.el-table--small{
+    font-size: 14px
+  }
+  .el-table--small td, .el-table--small th {
+      padding: 5px 0;
+  }
+  /*vue table用のcss上書き*/
+  .sc-table .tool-bar.el-row{
+    margin-bottom: 8px;
+  }
+  .sc-table .tool-bar.el-row .el-input__inner{
+    height: 30px;
+  }
+/* バリデーションエラー */
+  .has_error .el-select:hover .el-input__inner,
+  .has_error .el-input__inner, .has_error .el-input__inner:focus, .has_error .el-input__inner:hover
+  .has_error  textarea, .has_error  textarea:focus, .has_error  textarea:hover,
+  .has_error  select, .has_error  select:focus, .has_error  select:hover{
+    border-color: #ff3860;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 5px rgba(255, 56, 96, 0.5);
+  }
+
+  /**申請書作成**/
+  .shinseiTableArea{
+     margin-top:1rem;
+  }
+  .shinseiTableArea .alignR input{
+    text-align:right;
+  }
+  /*ここ全体のテーブルに適用するかあとで確認*/
+  .shinseiTableArea .el-table .cell,
+  .shinsei-kensaku .el-table .cell{
+    padding: 0 6px;
+  }
+
+  /*メッセージボックス*/
+  .el-message__content li{
+    padding: 5px 0;
+  }
