@@ -20,4 +20,3 @@ db.sqlite3
 package-lock.json
 build/
 mysite/__pycache__/
-=======
