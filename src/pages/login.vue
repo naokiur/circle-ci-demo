@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
   name: 'Login',
@@ -42,7 +43,11 @@ export default {
       console.log(this.$refs[formName])
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!!')
+          axios.get('http://localhost:8000/news')
+            .then(response => {
+              console.log(response.status)
+              console.log(response.data)
+            })
         } else {
           alert('error')
           return false
