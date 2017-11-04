@@ -43,7 +43,7 @@ export default {
       console.log(this.$refs[formName])
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          axios.get('http://localhost:8000/news')
+          axios.get('http://localhost:8000/news/')
             .then(response => {
               console.log(response.status)
               console.log(response.data)
