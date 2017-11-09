@@ -9,4 +9,6 @@ def page_title(request):
     page.title = "Title test"
     page.contents = "Contents test"
 
+    print(dir(request.POST.values))
+
     return JsonResponse(page.to_dict())

@@ -20,13 +20,17 @@
 <script>
 import axios from 'axios'
 
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+
 export default {
   name: 'Login',
   data () {
     return {
       loginForm: {
         name: '',
-        password: ''
+        password: '',
+        csrf: ''
       },
       rules: {
         name: [
@@ -43,7 +47,10 @@ export default {
       console.log(this.$refs[formName])
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          axios.get('http://localhost:8000/news/')
+          axios.post('http://localhost:8000/news/', {
+            name: this.$refs[formName].name,
+            password: this.$refs[formName].password
+          })
             .then(response => {
               console.log(response.status)
               console.log(response.data)
