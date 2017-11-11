@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'corsheaders',
     'mysite',
-    'employee'
+    'employee',
+    'snippets'
 ]
 
 MIDDLEWARE = [
