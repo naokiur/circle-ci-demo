@@ -13,11 +13,31 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework import routers
+from rest_framework_swagger.views import get_swagger_view
 from mysite import views
+# from employee import views
+
+router = routers.DefaultRouter()
+
+# router.register(
+#     r'news/',
+#     views.Login,
+#     base_name='Page'
+# )
+
+schema_view = get_swagger_view(title='Pastenbin API')
+
+sample_urlpatterns = [
+    url(r'news/', views.page_title),
+]
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'news/', views.page_title, name="page_title")
+    url(r'^$', schema_view),
+    url(r'sample/', include(sample_urlpatterns))
+    # url(r'^api/', include(router.urls, namespace='api')),
+    # url(r'^admin/', admin.site.urls),
+    # url(r'news/', views.page_title, name="page_title")
 ]
