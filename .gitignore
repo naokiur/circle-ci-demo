@@ -19,6 +19,6 @@ build/.*
 db.sqlite3
 package-lock.json
 build/
-mysite/__pycache__/
+*/__pycache__/
 */migrations/
 venv/
