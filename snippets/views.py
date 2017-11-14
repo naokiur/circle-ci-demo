@@ -8,6 +8,9 @@ from snippets.serializers import SnippetSerializer
 
 @csrf_exempt
 def snippet_list(request):
+    """
+    List all code snippets or create a new snippet
+    """
     if request.method == 'GET':
         snippets = Snippet.objects.all()
         serializer = SnippetSerializer(snippets, many=True)
