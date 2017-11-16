@@ -1,8 +1,11 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
+from rest_framework.routers import DefaultRouter
 
 from snippets import views
 
+router = DefaultRouter()
+router.register(r'snippets', views.SnippetViewSet)
+
 urlpatterns = [
-  url(r'^snippets/$', views.SnippetList.as_view()),
-  url(r'^snippets/(?P<pk>[0-9]+)$', views.SnippetDetail.as_view())
+  url(r'^', include(router.urls)),
 ]
