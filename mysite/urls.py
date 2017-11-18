@@ -36,6 +36,7 @@ sample_urlpatterns = [
 
 urlpatterns = [
     url(r'^', include('snippets.urls')),
+    url(r'^', include('employee.urls')),
     url(r'swagger$', schema_view),
     url(r'sample/', include(sample_urlpatterns))
     # url(r'^api/', include(router.urls, namespace='api')),
