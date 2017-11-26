@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
-    "element-ui": "^2.0.1",
+    "element-ui": "^2.0.5",
     "font-awesome": "^4.7.0",
     "jsbarcode": "^3.8.0",
     "moment": "^2.19.2",

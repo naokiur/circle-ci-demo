@@ -17,11 +17,15 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <el-input type="text" placeholder="test"></el-input>
   </div>
 </template>
 
 <script>
+import ElInput from '../../node_modules/element-ui/packages/input/src/input.vue'
+
 export default {
+  components: {ElInput},
   name: 'HelloWorld',
   data () {
     return {
