@@ -26,7 +26,7 @@ import ElInput from '../../node_modules/element-ui/packages/input/src/input.vue'
 
 export default {
   components: {ElInput},
-  name: 'HelloWorld',
+  name: 'Login',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

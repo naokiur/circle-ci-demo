@@ -30,15 +30,14 @@ Vue.use(VeeValidate, {
 })
 
 const route = new VueRouter(router)
-router.beforeEach((to, from, next) => {
+route.beforeEach((to, from, next) => {
   document.title = to.meta.title
   next()
 })
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
   template: '<App/>',
   components: { App },
-  route
+  router: route
 })
