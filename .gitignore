@@ -18,6 +18,6 @@ build/.*
 
 db.sqlite3
 package-lock.json
-backend/employee/__pycache__/
+__pycache__/
 */lib/*
 backend/bin/
