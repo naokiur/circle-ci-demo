@@ -1,3 +1,4 @@
+import time
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -12,7 +13,13 @@ class UserViewSet(viewsets.ModelViewSet):
 
 	@logger(func_name="ユーザ取得機能")
 	def list(self, request):
-		print("users")
+		# 何かの処理
+		time.sleep(1)
+
+		print("users, execute something.")
+
+		# 何かの処理
+		time.sleep(1)
 
 		return Response()
 
@@ -23,6 +30,12 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 	@logger(func_name="グループ取得機能")
 	def list(self, request):
-		print("groups")
+		# 何かの処理
+		time.sleep(1)
+
+		print("groups, execute something.")
+
+		# 何かの処理
+		time.sleep(1)
 
 		return Response()
