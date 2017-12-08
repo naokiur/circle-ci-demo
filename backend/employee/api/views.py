@@ -1,18 +1,22 @@
 import time
+from logging import getLogger
+
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework.response import Response
 
 from employee.api.serializers import UserSerializer, GroupSerializer
-from employee.common.interceptor.logger import logger
+from employee.common.constants import LOGGER_NAME
 
 
 class UserViewSet(viewsets.ModelViewSet):
 	queryset = User.objects.all().order_by('-date_joined')
 	serializer_class = UserSerializer
+	log = getLogger(LOGGER_NAME)
 
-	@logger
 	def list(self, request):
+		self.log.info("ユーザ取得機能開始")
+
 		# 何かの処理
 		time.sleep(1)
 
@@ -21,15 +25,18 @@ class UserViewSet(viewsets.ModelViewSet):
 		# 何かの処理
 		time.sleep(1)
 
+		self.log.info("ユーザ取得機能終了")
 		return Response()
 
 
 class GroupViewSet(viewsets.ModelViewSet):
 	queryset = Group.objects.all()
 	serializer_class = GroupSerializer
+	log = getLogger(LOGGER_NAME)
 
-	@logger
 	def list(self, request):
+		self.log.info("グループ取得機能開始")
+
 		# 何かの処理
 		time.sleep(1)
 
@@ -38,4 +45,5 @@ class GroupViewSet(viewsets.ModelViewSet):
 		# 何かの処理
 		time.sleep(1)
 
+		self.log.info("グループ取得機能終了")
 		return Response()
