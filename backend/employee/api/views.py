@@ -11,7 +11,7 @@ class UserViewSet(viewsets.ModelViewSet):
 	queryset = User.objects.all().order_by('-date_joined')
 	serializer_class = UserSerializer
 
-	@logger(func_name="ユーザ取得機能")
+	@logger
 	def list(self, request):
 		# 何かの処理
 		time.sleep(1)
@@ -28,7 +28,7 @@ class GroupViewSet(viewsets.ModelViewSet):
 	queryset = Group.objects.all()
 	serializer_class = GroupSerializer
 
-	@logger(func_name="グループ取得機能")
+	@logger
 	def list(self, request):
 		# 何かの処理
 		time.sleep(1)
