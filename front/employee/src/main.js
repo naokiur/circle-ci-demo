@@ -14,6 +14,7 @@ import VeeValidate from 'vee-validate'
 import VeeValidateJaLocale from 'vee-validate/dist/locale/ja'
 
 import App from './App'
+import main from './js/training/ReIntroduction'
 
 Vue.config.productionTip = false
 
@@ -29,7 +30,11 @@ Vue.use(VeeValidate, {
   fieldsBagName: 'checkField'
 })
 
+// For Training JavaScript
+main()
+
 const route = new VueRouter(router)
+
 route.beforeEach((to, from, next) => {
   document.title = to.meta.title
   next()
