@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>ログイン</h1>
+    <el-input type="text" v-model="userName" name="userName" placeholder="ユーザ名"></el-input>
+    <el-input type="password" v-model="password" name="password" placeholder="パスワード"></el-input>
+    <el-button @click="login">ログイン</el-button>
   </div>
 </template>
 
@@ -8,7 +10,14 @@
   export default {
     name: 'login',
     data () {
-      return {}
+      return {
+        userName: '',
+        password: ''
+      }
+    },
+    methods: {
+      login: function () {
+      }
     }
   }
 </script>
