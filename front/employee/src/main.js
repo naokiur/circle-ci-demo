@@ -14,7 +14,8 @@ import VeeValidate from 'vee-validate'
 import VeeValidateJaLocale from 'vee-validate/dist/locale/ja'
 
 import App from './App'
-import main from './js/training/ReIntroduction'
+
+import main from './js/training/main'
 
 Vue.config.productionTip = false
 
@@ -32,6 +33,7 @@ Vue.use(VeeValidate, {
 
 // For Training JavaScript
 main()
+// For Training JavaScript
 
 const route = new VueRouter(router)
 
