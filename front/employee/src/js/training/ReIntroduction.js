@@ -10,6 +10,7 @@ const callSubjects = function () {
   operators()
   controlStructure()
   objects()
+  arrays()
   console.log('----- end subjects -----')
 }
 
@@ -167,4 +168,17 @@ const objects = function () {
   let p = new Polygon(12, 5)
   console.log(p.height)
   console.log(p.width)
+}
+
+const arrays = function () {
+  console.log('------ arrays ------')
+  let a = ['dog', 'cat', 'hen']
+  console.log(a.length)
+  a[100] = 'fox'
+  console.log(a.length)
+  let b = ['dog', 'cat', 'hen']
+  for (const value of b) {
+    console.log(value)
+  }
+  b.forEach(value => console.log('forEach and arrow:' + value))
 }
