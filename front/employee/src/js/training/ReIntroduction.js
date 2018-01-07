@@ -144,4 +144,27 @@ const controlStructure = function () {
 
 const objects = function () {
   console.log('------ objects ------')
+  let obj = {
+    name: 'Carrot',
+    _for: 'max',
+    details: {
+      color: 'orange',
+      size: 12
+    }
+  }
+  console.log('obj.name:' + obj.name)
+  console.log('obj[\'name\']:' + obj['name'])
+  console.log('obj.details.color:' + obj.details.color)
+  console.log('obj[\'details\'][\'color\']:' + obj['details']['color'])
+
+  // class
+  class Polygon {
+    constructor (height, width) {
+      this.height = height
+      this.width = width
+    }
+  }
+  let p = new Polygon(12, 5)
+  console.log(p.height)
+  console.log(p.width)
 }
