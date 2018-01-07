@@ -9,6 +9,7 @@ const callSubjects = function () {
   types()
   operators()
   controlStructure()
+  objects()
   console.log('----- end subjects -----')
 }
 
@@ -68,4 +69,79 @@ const operators = function () {
 
 const controlStructure = function () {
   console.log('------ controlStructure ------')
+
+  let name = 'kittens'
+  if (name === 'puppies') {
+    name += ' woof'
+  } else if (name === 'kittens') {
+    name += ' meow'
+  } else {
+    name += '!'
+  }
+  console.log(name)
+  // loop
+  const array = ['a', 'b', 'c']
+  for (let value of array) {
+    console.log(value)
+  }
+  let animal = {
+    hand: 2,
+    foot: 2,
+    heart: 1
+  }
+  for (let property in animal) {
+    console.log(property)
+    console.log(animal[property]) // I can access value of property.
+  }
+  // short-circuit logic
+  let o = {
+    name: 'test o'
+  }
+  let u
+  let n = o && o.name
+  let n2 = u && u.name
+  // let n3 = u.name // This will be TypeError, short-circuit can avoid this error.
+  console.log('n is ' + n)
+  console.log('n2 is ' + n2)
+  // console.log(n3)
+  let alreadyCached = 'Cached!'
+  let notCached
+  console.log(alreadyCached || (alreadyCached = 'Second cache'))
+  console.log(notCached || (notCached = 'Second cache'))
+  // Ternary operator (三項演算子)
+  const age = 18
+  console.log((age > 18) ? 'yes' : 'no')
+  // Switch
+  let action = 'eat'
+
+  switch (action) {
+    case 'draw':
+      console.log('draw now!')
+      break // In ESLint, Required break.
+    case 'eat':
+      console.log('eat now!')
+      break
+    default:
+      console.log('nothing!')
+  }
+  switch (action) {
+    case 'eat':
+    case 'draw': // But, this is ok.
+      console.log('eat and draw')
+      break
+    default:
+      console.log('nothing')
+  }
+  let stringCondition = '4'
+  switch (stringCondition) {
+    case 4:
+      console.log('match!')
+      break
+    default: // switch use '===' operator.
+      console.log('not match!')
+  }
+}
+
+const objects = function () {
+  console.log('------ objects ------')
 }
