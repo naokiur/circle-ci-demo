@@ -6,7 +6,7 @@ import router from './router'
 import ElementUI from 'element-ui'
 import lang from 'element-ui/lib/locale/lang/ja'
 import locale from 'element-ui/lib/locale'
-// import 'element-ui/lib/theme-chalk/index.css'
+import 'element-ui/lib/theme-chalk/index.css'
 import DataTables from 'vue-data-tables'
 // import 'font-awesome/css/font-awesome.min.css'
 

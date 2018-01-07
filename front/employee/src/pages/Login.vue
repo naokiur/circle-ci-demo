@@ -17,6 +17,7 @@
     },
     methods: {
       login: function () {
+        this.$router.push('menu')
       }
     }
   }
