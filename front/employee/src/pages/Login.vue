@@ -1,18 +1,20 @@
 <template>
   <div>
-    <el-input
-      type="text"
-      v-model="userName"
-      name="userName"
-      placeholder="ユーザ名">
-    </el-input>
-    <el-input
-      type="password"
-      v-model="password"
-      name="password"
-      placeholder="パスワード">
-    </el-input>
-    <el-button @click="login">ログイン</el-button>
+    <section class="loginArea">
+      <el-input
+        type="text"
+        v-model="userName"
+        name="userName"
+        placeholder="ユーザ名">
+      </el-input>
+      <el-input
+        type="password"
+        v-model="password"
+        name="password"
+        placeholder="パスワード">
+      </el-input>
+      <el-button @click="login">ログイン</el-button>
+    </section>
   </div>
 </template>
 
@@ -33,6 +35,11 @@
   }
 </script>
 
-<style>
+<style scoped>
+  .loginArea {
+    width: 25rem;
+    margin: auto;
+  }
+
 
 </style>
