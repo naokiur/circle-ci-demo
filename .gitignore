@@ -21,3 +21,6 @@ package-lock.json
 __pycache__/
 */lib/*
 backend/bin/
+
+*/*.log
+backend/employee/api/migrations/*
