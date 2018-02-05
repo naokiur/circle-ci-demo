@@ -52,7 +52,6 @@
 
 <script>
   import EmployeeHeader from '@/components/EmployeeHeader.vue'
-  import ElRow from 'element-ui/packages/row/src/row'
 
   export default {
     name: 'menu',
@@ -72,7 +71,6 @@
     },
     methods: {},
     components: {
-      ElRow,
       EmployeeHeader
     }
   }
