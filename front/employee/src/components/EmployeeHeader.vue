@@ -12,7 +12,12 @@
     name: 'header',
     data () {
       return {
-        actionIndex: '1'
+        activeIndex: '1'
+      }
+    },
+    methods: {
+      handleSelect: function (key, keyPath) {
+        console.log(key + keyPath)
       }
     }
   }
