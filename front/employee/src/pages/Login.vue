@@ -29,7 +29,12 @@
     },
     methods: {
       login: function () {
-        this.$router.push('menu')
+        const authorizedUserName = 'test'
+        const authorizedPassword = 'test'
+
+        if (this.userName === authorizedUserName && this.userName === authorizedPassword) {
+          this.$router.push('menu')
+        }
       }
     }
   }
