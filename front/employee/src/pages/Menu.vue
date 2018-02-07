@@ -58,8 +58,28 @@
         <el-table
           :data="result">
           <el-table-column
+            prop="userId"
+            label="ユーザID">
+          </el-table-column>
+          <el-table-column
             prop="firstName"
+            label="名字">
+          </el-table-column>
+          <el-table-column
+            prop="lastName"
             label="名前">
+          </el-table-column>
+          <el-table-column
+            prop="post"
+            label="部署">
+          </el-table-column>
+          <el-table-column
+            prop="age"
+            label="年齢">
+          </el-table-column>
+          <el-table-column
+            prop="enterDate"
+            label="入社年月日">
           </el-table-column>
         </el-table>
       </el-row>
