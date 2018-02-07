@@ -8,10 +8,10 @@ export default {
       component: () => import(/* webpackChunkName: "login" */'./pages/Login.vue')
     },
     {
-      path: '/menu',
-      name: 'menu',
-      meta: {title: 'メニュー'},
-      component: () => import(/* webpackChunkName: "menu" */'./pages/Menu.vue')
+      path: '/search',
+      name: 'search',
+      meta: {title: '検索画面'},
+      component: () => import(/* webpackChunkName: "menu" */'./pages/Search.vue')
     }
   ]
 }
