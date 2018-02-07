@@ -45,6 +45,14 @@
           </el-form>
         </el-col>
       </el-row>
+      <el-row>
+        <el-col :span="4" :offset="20">
+          <el-button
+            @click="search">
+              検索
+          </el-button>
+        </el-col>
+      </el-row>
 
       <el-row>
         <el-table
@@ -76,13 +84,17 @@
         age: '',
         enterDateFrom: '',
         enterDateTo: '',
-        result: [
+        result: []
+      }
+    },
+    methods: {
+      search: function () {
+        this.result = [
           {firstName: 'test1'},
           {firstName: 'test2'}
         ]
       }
     },
-    methods: {},
     components: {
       EmployeeHeader
     }
