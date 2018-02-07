@@ -46,6 +46,15 @@
         </el-col>
       </el-row>
 
+      <el-row>
+        <el-table
+          :data="result">
+          <el-table-column
+            prop="firstName"
+            label="名前">
+          </el-table-column>
+        </el-table>
+      </el-row>
     </section>
   </div>
 </template>
@@ -66,7 +75,11 @@
         ],
         age: '',
         enterDateFrom: '',
-        enterDateTo: ''
+        enterDateTo: '',
+        result: [
+          {firstName: 'test1'},
+          {firstName: 'test2'}
+        ]
       }
     },
     methods: {},
