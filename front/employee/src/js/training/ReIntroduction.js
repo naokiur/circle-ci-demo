@@ -2,6 +2,13 @@ export default function () {
   console.log('This is main for training JavaScript')
   otherFunc()
   callSubjects()
+  callGrammar()
+}
+const beginMessage = function (title) {
+  console.log(`----- begin ${title} -----`)
+}
+const endMessage = function (title) {
+  console.log(`----- end ${title} -----`)
 }
 
 const callSubjects = function () {
@@ -12,6 +19,27 @@ const callSubjects = function () {
   objects()
   arrays()
   console.log('----- end subjects -----')
+}
+
+const callGrammar = function () {
+  beginMessage('grammar')
+  let hoge = 'hoge'
+  const hoge2 = 'hoge2'
+  console.log(hoge)
+  console.log(hoge2)
+  hoge = 'updated let'
+  console.log(hoge)
+  // hoge2 = 'updated const' error
+
+  const array = [1, 2, 3]
+  array.forEach((v) => console.log(v))
+  array.push(4)
+  array.forEach((v) => console.log(v))
+  console.log(array.join('-'))
+
+  const array2 = array.map((v) => v * 2)
+  array2.forEach((v) => console.log(v))
+  endMessage('grammar')
 }
 
 const otherFunc = function () {
