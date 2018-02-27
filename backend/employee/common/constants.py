@@ -1,1 +1,1 @@
-LOGGER_NAME = 'log'
+LOGGER_NAME = 'django.db.backend'

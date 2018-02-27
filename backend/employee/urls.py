@@ -20,6 +20,7 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register(r'users', viewset=views.UserViewSet)
 router.register(r'groups', viewset=views.GroupViewSet)
+router.register(r'queryset', viewset=views.QuerySetConfirmViewSet, base_name='queryset')
 
 urlpatterns = [
     url(r'^', include(router.urls)),

@@ -1,7 +1,10 @@
 import time
+from datetime import datetime
 from logging import getLogger
 
 from django.contrib.auth.models import User, Group
+
+from employee.api.models import Employee
 from employee.api.serializers import UserSerializer, GroupSerializer
 from employee.common.constants import LOGGER_NAME
 from rest_framework import viewsets
@@ -11,7 +14,9 @@ from rest_framework.response import Response
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
-    log = getLogger(LOGGER_NAME)
+
+    def __init__(self):
+        self.logger = getLogger(LOGGER_NAME)
 
     def list(self, request):
 
@@ -43,4 +48,33 @@ class GroupViewSet(viewsets.ModelViewSet):
         time.sleep(1)
 
         self.log.info("グループ取得機能終了")
+        return Response()
+
+
+class QuerySetConfirmViewSet(viewsets.ModelViewSet):
+    serializer_class = GroupSerializer
+
+    def __init__(self, **kwargs):
+        super(QuerySetConfirmViewSet, self).__init__(**kwargs)
+        self.logger = getLogger(LOGGER_NAME)
+
+    def list(self, request):
+        Employee.objects.create(
+            user_id='123',
+            password='admin',
+            first_name='aaa',
+            last_name='bbb',
+            post_code='5',
+            age=20,
+            enter_date=datetime.today()
+        )
+
+        employee_query = Employee.objects.all()
+        print(employee_query)
+
+        [print(q) for q in employee_query]
+
+        one_employee = employee_query[:1]
+        print(one_employee)
+
         return Response()
