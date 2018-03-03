@@ -33,7 +33,7 @@
         const authorizedPassword = 'test'
 
         if (this.userName === authorizedUserName && this.userName === authorizedPassword) {
-          this.$router.push('search')
+          this.$router.push('index')
         }
       }
     }

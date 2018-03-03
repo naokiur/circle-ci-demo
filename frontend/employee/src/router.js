@@ -12,6 +12,12 @@ export default {
       name: 'search',
       meta: {title: '検索画面'},
       component: () => import(/* webpackChunkName: "menu" */'./pages/Search.vue')
+    },
+    {
+      path: '/index',
+      name: 'index',
+      meta: {title: 'NEMS'},
+      component: () => import(/* webpackChunkName: "index" */'./pages/Index.vue')
     }
   ]
 }

@@ -8,14 +8,11 @@ import lang from 'element-ui/lib/locale/lang/ja'
 import locale from 'element-ui/lib/locale'
 import 'element-ui/lib/theme-chalk/index.css'
 import DataTables from 'vue-data-tables'
-// import 'font-awesome/css/font-awesome.min.css'
-
 import VeeValidate from 'vee-validate'
 import VeeValidateJaLocale from 'vee-validate/dist/locale/ja'
 
 import App from './App'
-
-import main from './js/training/main'
+// import 'font-awesome/css/font-awesome.min.css'
 
 Vue.config.productionTip = false
 
@@ -32,7 +29,7 @@ Vue.use(VeeValidate, {
 })
 
 // For Training JavaScript
-main()
+// main()
 // For Training JavaScript
 
 const route = new VueRouter(router)
@@ -45,6 +42,6 @@ route.beforeEach((to, from, next) => {
 new Vue({
   el: '#app',
   template: '<App/>',
-  components: { App },
+  components: {App},
   router: route
 })
