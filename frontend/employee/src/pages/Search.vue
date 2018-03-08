@@ -1,6 +1,5 @@
 <template>
   <div>
-    <employee-header></employee-header>
     <section class="condition">
       <h2>条件</h2>
       <el-row>
@@ -88,8 +87,6 @@
 </template>
 
 <script>
-  import EmployeeHeader from '@/components/EmployeeHeader.vue'
-
   export default {
     name: 'menu',
     data () {
@@ -114,9 +111,6 @@
           {firstName: 'test2'}
         ]
       }
-    },
-    components: {
-      EmployeeHeader
     }
   }
 </script>
