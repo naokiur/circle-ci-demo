@@ -2,7 +2,7 @@
   <div>
     <employee-header @changeMenu="changeMenu"></employee-header>
     <register v-if="this.menu === MenuIndex.Register"></register>
-    <!--<search v-if="this.menuIndex === MenuIndex().Search"></search>-->
+    <search v-if="this.menu === MenuIndex.Search"></search>
   </div>
 </template>
 
@@ -10,16 +10,14 @@
   import Search from '@/pages/Search.vue'
   import Register from '@/pages/Register.vue'
   import EmployeeHeader from '@/components/EmployeeHeader.vue'
-  import {
-    MenuIndex
-  }
-  from '@/js/constants.js'
+  import constants from '@/js/constants'
 
   export default {
     name: 'index',
+    mixins: [constants],
     data () {
       return {
-        menu: MenuIndex.Search
+        menu: ''
       }
     },
     methods: {
@@ -27,8 +25,8 @@
         this.menu = index
       }
     },
-    mixins: {
-      MenuIndex
+    created () {
+      this.foo()
     },
     components: {
       EmployeeHeader,

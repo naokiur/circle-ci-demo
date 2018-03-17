@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import MenuIndex from '../js/constants'
+  import constants from '@/js/constants'
 
   export default {
     name: 'header',
@@ -21,13 +21,10 @@
     // props: {
     //   activeIndex: 2
     // },
-    mixins: {
-      MenuIndex
-    },
+    mixins: [constants],
     methods: {
       changeMenu: function (index) {
         this.$emit('changeMenu', index)
-        // console.log(MenuIndex.Search)
       }
     }
   }
