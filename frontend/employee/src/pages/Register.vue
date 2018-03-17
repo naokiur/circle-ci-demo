@@ -33,10 +33,10 @@
                 <el-col :span="10">
                   <el-date-picker type="date" v-model="enterDateFrom"/>
                 </el-col>
-                <el-col span="3">
+                <el-col :span="3">
                   <span>〜</span>
                 </el-col>
-                <el-col span="10">
+                <el-col :span="10">
                   <el-date-picker type="date" v-model="enterDateTo"/>
                 </el-col>
               </el-row>
