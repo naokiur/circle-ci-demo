@@ -25,9 +25,6 @@
         this.menu = index
       }
     },
-    created () {
-      this.foo()
-    },
     components: {
       EmployeeHeader,
       Register,
