@@ -13,10 +13,5 @@ export default {
     return {
       MenuIndex
     }
-  },
-  methods: {
-    foo: function () {
-      console.log('hello const mixin!')
-    }
   }
 }
