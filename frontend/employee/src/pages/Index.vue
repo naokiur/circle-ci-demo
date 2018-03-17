@@ -25,6 +25,9 @@
         this.menu = index
       }
     },
+    created () {
+      this.menu = this.MenuIndex.Search
+    },
     components: {
       EmployeeHeader,
       Register,
