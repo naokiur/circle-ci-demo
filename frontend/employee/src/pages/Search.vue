@@ -68,6 +68,16 @@
                   prop="enterDate"
                   label="入社年月日">
                 </el-table-column>
+                <el-table-column>
+                  <template slot-scope="scope">
+                    <el-button
+                      @click="deleteRow(scope.$index, scope.row)"
+                      type="text"
+                      size="small">
+                      削除
+                    </el-button>
+                  </template>
+                </el-table-column>
               </el-table>
             </el-row>
           </section>
@@ -104,6 +114,10 @@
           {firstName: 'test1'},
           {firstName: 'test2'}
         ]
+      },
+      deleteRow: function (index, row) {
+        console.log(index)
+        console.log(row)
       }
     }
   }
