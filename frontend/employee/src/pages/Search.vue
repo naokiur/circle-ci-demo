@@ -28,8 +28,19 @@
                 <el-input-number :controls="false" v-model="age"></el-input-number>
               </el-form-item>
               <el-form-item label="入社年月日">
-                <el-col :span="21">
-                  <el-date-picker type="daterange" range-separator="〜" v-model="enterDateFrom" size="mini" style="width: 100%"/>
+                <el-col :span="10">
+                  <el-date-picker
+                    v-model="enterDateFrom" size="mini"
+                    class="enterDate" />
+                </el-col>
+                <el-col :span="2"
+                  class="enterDateDivide">
+                  <span>〜</span>
+                </el-col>
+                <el-col :span="10">
+                  <el-date-picker
+                    v-model="enterDateTo" size="mini"
+                    class="enterDate" />
                 </el-col>
               </el-form-item>
               <el-button @click="search" round>
@@ -149,6 +160,14 @@
     height: 100%;
     width: 100%;
     margin-top: 1rem;
+  }
+
+  .enterDate {
+    width: 100%;
+  }
+
+  .enterDateDivide {
+    text-align: center;
   }
 
   .el-main {
