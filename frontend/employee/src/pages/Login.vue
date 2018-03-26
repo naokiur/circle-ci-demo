@@ -7,9 +7,9 @@
     <section class="loginArea">
       <el-input
         type="text"
-        v-model="userName"
+        v-model="userId"
         name="userName"
-        placeholder="ユーザ名">
+        placeholder="ユーザID">
       </el-input>
       <el-input
         type="password"
@@ -23,16 +23,31 @@
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
     name: 'login',
     data () {
       return {
-        userName: '',
+        userId: '',
         password: ''
       }
     },
     methods: {
       login: function () {
+        const url = `${process.env.API_ENDPOINT}/api/login`
+
+        const sendData = {
+          user_id: this.userId,
+          password: this.password
+        }
+
+        axios.post(url, sendData, {}).then(res => {
+          console.log(res)
+        }).catch(res => {
+          console.log(res)
+        })
+
         const authorizedUserName = 'test'
         const authorizedPassword = 'test'
 

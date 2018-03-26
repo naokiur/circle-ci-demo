@@ -18,11 +18,12 @@ from employee.api import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'users', viewset=views.UserViewSet)
-router.register(r'groups', viewset=views.GroupViewSet)
-router.register(r'queryset', viewset=views.QuerySetConfirmViewSet, base_name='queryset')
+router.register(r'login', viewset=views.LoginViewSet, base_name='login')
+# router.register(r'users', viewset=views.UserViewSet)
+# router.register(r'groups', viewset=views.GroupViewSet)
+# router.register(r'queryset', viewset=views.QuerySetConfirmViewSet, base_name='queryset')
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api/', include(router.urls, namespace='api'))
+    # url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
