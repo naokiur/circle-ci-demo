@@ -23,8 +23,5 @@ class LoginViewSet(viewsets.GenericViewSet):
     def create(self, request):
         print(request.param)
         self.logger.info(request.param)
-        # serializer = LoginSerializer(self.queryset)
-
-        # Employee.objects.filter(user_id=)
 
         return Response()
