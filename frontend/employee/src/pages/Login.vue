@@ -51,8 +51,10 @@
         const authorizedUserName = 'test'
         const authorizedPassword = 'test'
 
-        if (this.userName === authorizedUserName && this.userName === authorizedPassword) {
+        if (this.userId === authorizedUserName && this.password === authorizedPassword) {
           this.$router.push('index')
+        } else {
+          console.log('login error')
         }
       }
     }
