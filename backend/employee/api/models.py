@@ -13,3 +13,12 @@ class Employee(models.Model):
     class Meta:
         managed = True
         db_table = 'employee'
+
+
+class Login(models.Model):
+    user_id = models.CharField(max_length=12)
+    password = models.TextField()
+
+    class Meta:
+        managed = True
+        db_table = 'login'

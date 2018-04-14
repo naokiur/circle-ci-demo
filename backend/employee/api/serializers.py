@@ -13,7 +13,7 @@ from rest_framework import serializers
 #         model = Group
 #         fields = ('url', 'name')
 #
-from employee.api.models import Employee
+from employee.api.models import Employee, Login
 
 
 class DummySerializer(serializers.ModelSerializer):
@@ -25,7 +25,8 @@ class DummySerializer(serializers.ModelSerializer):
 class LoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
-        fields = ['user_id', 'password']
+        fields = ('user_id', 'password')
 
-    def __init__(self):
+    def __init__(self, queryset):
         print(self.data)
+        print(queryset)

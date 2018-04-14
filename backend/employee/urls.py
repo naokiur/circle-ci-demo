@@ -18,8 +18,9 @@ from employee.api import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'login', viewset=views.LoginViewSet, base_name='login')
+# router.register(r'login', views.LoginViewSet.as_view())
 
 urlpatterns = [
-    url(r'^api/', include(router.urls, namespace='api'))
+    url(r'^api/', include(router.urls, namespace='api')),
+    url(r'^api/login', views.LoginViewSet.as_view())
 ]
