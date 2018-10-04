@@ -8,8 +8,6 @@ import lang from 'element-ui/lib/locale/lang/ja'
 import locale from 'element-ui/lib/locale'
 import 'element-ui/lib/theme-chalk/index.css'
 import DataTables from 'vue-data-tables'
-import VeeValidate from 'vee-validate'
-import VeeValidateJaLocale from 'vee-validate/dist/locale/ja'
 
 import App from './App'
 // import 'font-awesome/css/font-awesome.min.css'
@@ -21,12 +19,6 @@ Vue.use(DataTables)
 locale.use(lang)
 
 Vue.use(VueRouter)
-
-VeeValidate.Validator.addLocale(VeeValidateJaLocale)
-Vue.use(VeeValidate, {
-  locale: 'ja', // eslint-disable-line
-  fieldsBagName: 'checkField'
-})
 
 // For Training JavaScript
 // main()

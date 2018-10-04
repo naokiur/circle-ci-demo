@@ -19,7 +19,6 @@
     "font-awesome": "^4.7.0",
     "jsbarcode": "^3.8.0",
     "moment": "^2.19.2",
-    "vee-validate": "^2.0.0-rc.18",
     "vue": "2.5.3",
     "vue-data-tables": "^2.1.0",
     "vue-router": "^2.7.0"

@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import axios from 'axios'
+  // import axios from 'axios'
 
   export default {
     name: 'login',
@@ -35,18 +35,18 @@
     },
     methods: {
       login: function () {
-        const url = `${process.env.API_ENDPOINT}/api/login`
+        // const url = `${process.env.API_ENDPOINT}/api/login`
 
-        const sendData = {
-          user_id: this.userId,
-          password: this.password
-        }
+        // const sendData = {
+        //   user_id: this.userId,
+        //   password: this.password
+        // }
 
-        axios.post(url, sendData, {}).then(res => {
-          console.log(res)
-        }).catch(res => {
-          console.log(res)
-        })
+        // axios.post(url, sendData, {}).then(res => {
+        //   console.log(res)
+        // }).catch(res => {
+        //   console.log(res)
+        // })
 
         const authorizedUserName = 'test'
         const authorizedPassword = 'test'
