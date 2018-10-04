@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <login></login>
+    <test-target></test-target>
   </div>
 </template>
 
 <script>
-import Login from '@/pages/Login.vue'
+import TestTarget from '@/pages/TestTarget.vue'
 
 export default {
   name: 'app',
@@ -14,15 +14,15 @@ export default {
     }
   },
   components: {
-    Login
+    TestTarget
   }
 }
 </script>
 
 <style>
-  html {
+  /* html {
     background-color: #cccccc;
-  }
+  } */
   body {
     margin: 0;
   }
