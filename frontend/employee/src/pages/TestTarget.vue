@@ -1,13 +1,13 @@
 <template>
   <div>
     <section>
-      <input type="text" class="inputData" v-model="inputData" placeholder="please enter some test!" />
+      <input type="text" name="inputData" v-model="inputData" placeholder="please enter some test!" />
     </section>
     <section>
       <input type="button" value="send" @click="send" />
     </section>
     <section>
-      <input type="text" :value="result" />
+      <input type="text" name="resultData" :value="result" />
     </section>
   </div>
 </template>
