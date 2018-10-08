@@ -8,8 +8,8 @@ module.exports = {
     targetPage.navigate()
       .assert.visible('@inputData')
       .setValue('@inputData', 'test')
-      // .send()
-      .assert.value('@inputData', 'test')
+      .send()
+      .assert.value('@resultData', 'test')
     
     browser.end()
   } 
