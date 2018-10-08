@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <input type="text" v-model="inputData" placeholder="please enter some test!" />
+      <input type="text" class="inputData" v-model="inputData" placeholder="please enter some test!" />
     </section>
     <section>
       <input type="button" value="send" @click="send" />
