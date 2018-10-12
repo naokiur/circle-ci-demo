@@ -1,20 +1,16 @@
 <template>
   <div id="app">
-    <test-target></test-target>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import TestTarget from '@/pages/TestTarget.vue'
 
 export default {
   name: 'app',
   data () {
     return {
     }
-  },
-  components: {
-    TestTarget
   }
 }
 </script>

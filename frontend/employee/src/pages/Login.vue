@@ -48,13 +48,15 @@
         //   console.log(res)
         // })
 
+        // TODO Backend
         const authorizedUserName = 'test'
         const authorizedPassword = 'test'
 
         if (this.userId === authorizedUserName && this.password === authorizedPassword) {
+          console.log('login success.')
           this.$router.push('index')
         } else {
-          console.log('login error')
+          console.log('login failed.')
         }
       }
     }
