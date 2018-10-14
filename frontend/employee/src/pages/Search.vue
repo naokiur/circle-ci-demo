@@ -8,14 +8,14 @@
             <el-form ref="form" :model="form" label-position="left" label-width="4rem">
               <el-form-item label="名前">
                 <el-col :span="10">
-                  <el-input v-model="firstName"></el-input>
+                  <el-input size="mini" v-model="firstName"></el-input>
                 </el-col>
                 <el-col :span="10" style="margin-left: 0.5rem">
-                  <el-input v-model="lastName"></el-input>
+                  <el-input size="mini" v-model="lastName"></el-input>
                 </el-col>
               </el-form-item>
               <el-form-item label="部署">
-                <el-select v-model="selectedPost">
+                <el-select size="mini" v-model="selectedPost">
                   <el-option
                     v-for="post in postList"
                     :value="post.value"
@@ -25,11 +25,11 @@
                 </el-select>
               </el-form-item>
               <el-form-item label="年齢">
-                <el-input-number :controls="false" v-model="age"></el-input-number>
+                <el-input-number size="mini" :controls="false" v-model="age" :min="0"></el-input-number>
               </el-form-item>
               <el-form-item label="入社年月日">
                 <el-col :span="10">
-                  <el-date-picker
+                  <el-date-picker 
                     v-model="enterDateFrom" size="mini"
                     class="enterDate" />
                 </el-col>
@@ -140,9 +140,9 @@
   }
 
   .condition {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     background-color: #DEDEDE;
-    height: auto;
+    height: 100%;
   }
 
   .condition >>> div {
@@ -150,8 +150,7 @@
   }
 
   .condition >>> * {
-    font-size: 80%;
-    height: 80%;
+    font-size: 10%;
   }
 
   .condition >>> .el-button {

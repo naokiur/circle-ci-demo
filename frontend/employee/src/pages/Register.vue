@@ -26,18 +26,12 @@
               </el-select>
             </el-form-item>
             <el-form-item label="年齢">
-              <el-input-number v-model="age"></el-input-number>
+              <el-input-number size="mini" :controls="false" v-model="age" :min="0"></el-input-number>
             </el-form-item>
             <el-form-item label="入社年月日">
               <el-row type="flex" :gutter="20">
                 <el-col :span="10">
                   <el-date-picker type="date" v-model="enterDateFrom"/>
-                </el-col>
-                <el-col :span="3">
-                  <span>〜</span>
-                </el-col>
-                <el-col :span="10">
-                  <el-date-picker type="date" v-model="enterDateTo"/>
                 </el-col>
               </el-row>
             </el-form-item>
