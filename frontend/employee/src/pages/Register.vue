@@ -1,44 +1,48 @@
 <template>
   <div>
-    <section class="condition">
-      <h2>新規登録</h2>
-      <el-row>
-        <el-col :span="20">
-          <el-form label-width="8rem">
-            <el-form-item label="名前">
-              <el-row type="flex" :gutter="20">
-                <el-col :span="12">
-                  <el-input v-model="firstName"></el-input>
-                </el-col>
-                <el-col :span="12">
-                  <el-input v-model="lastName"></el-input>
-                </el-col>
-              </el-row>
-            </el-form-item>
-            <el-form-item label="部署">
-              <el-select v-model="selectedPost">
-                <el-option
-                  v-for="post in postList"
-                  :value="post.value"
-                  :key="post.key"
-                  :label="post.value">
-                </el-option>
-              </el-select>
-            </el-form-item>
-            <el-form-item label="年齢">
-              <el-input-number size="mini" :controls="false" v-model="age" :min="0"></el-input-number>
-            </el-form-item>
-            <el-form-item label="入社年月日">
-              <el-row type="flex" :gutter="20">
-                <el-col :span="10">
-                  <el-date-picker type="date" v-model="enterDate"/>
-                </el-col>
-              </el-row>
-            </el-form-item>
-            <el-button @click="register" round>
-              登録
-            </el-button>
-          </el-form>
+    <section>
+      <el-row justify="center" type="flex">
+        <el-col :span="12">
+          <el-row class="employeeInformarion" justify="center" type="flex">
+            <el-col>
+              <h2>新規登録</h2>
+              <el-form label-width="8rem">
+                <el-form-item label="名前">
+                  <el-row type="flex" :gutter="20">
+                    <el-col :span="12">
+                      <el-input v-model="firstName"></el-input>
+                    </el-col>
+                    <el-col :span="12">
+                      <el-input v-model="lastName"></el-input>
+                    </el-col>
+                  </el-row>
+                </el-form-item>
+                <el-form-item label="部署">
+                  <el-select v-model="selectedPost">
+                    <el-option
+                      v-for="post in postList"
+                      :value="post.value"
+                      :key="post.key"
+                      :label="post.value">
+                    </el-option>
+                  </el-select>
+                </el-form-item>
+                <el-form-item label="年齢">
+                  <el-input-number size="mini" :controls="false" v-model="age" :min="0"></el-input-number>
+                </el-form-item>
+                <el-form-item label="入社年月日">
+                  <el-row type="flex" :gutter="20">
+                    <el-col :span="10">
+                      <el-date-picker type="date" v-model="enterDate"/>
+                    </el-col>
+                  </el-row>
+                </el-form-item>
+                <el-button @click="register" round>
+                  登録
+                </el-button>
+              </el-form>
+            </el-col>
+          </el-row>
         </el-col>
       </el-row>
     </section>
@@ -86,10 +90,12 @@
 </script>
 
 <style scoped>
-  .condition {
-    /*width: 50rem;*/
+  .employeeInformarion {
+    width: 50%;
     padding: 0.5rem 1rem;
+    /* margin: auto; */
     border-bottom: 0.1rem #e6e6e6 solid;
+    background-color: #FFFFFF;
   }
 
   .el-form-item label {

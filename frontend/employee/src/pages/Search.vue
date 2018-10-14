@@ -49,8 +49,8 @@
             </el-form>
           </div>
         </el-aside>
-        <el-main>
-          <section class="result">
+        <el-main class="result">
+          <section>
             <h3 style="text-align: left">検索結果</h3>
             <el-row>
               <el-table style="height: 70vh;"
@@ -139,7 +139,6 @@
 
   .condition {
     padding: 0.5rem 0.5rem;
-    background-color: #DEDEDE;
     height: 100%;
   }
 
@@ -173,7 +172,8 @@
   }
 
   .result {
-    margin: 0 1rem;
+    padding: 0 1rem;
+    background-color: #FFFFFF;
   }
 
   .el-form {
