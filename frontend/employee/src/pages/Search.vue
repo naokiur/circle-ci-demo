@@ -121,10 +121,8 @@
     },
     methods: {
       search: function () {
-        this.result = [
-          {firstName: 'test1'},
-          {firstName: 'test2'}
-        ]
+        const storage = sessionStorage
+        this.result = JSON.parse(storage.userList)
       },
       deleteRow: function (index, row) {
         console.log(index)

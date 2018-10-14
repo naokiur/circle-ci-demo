@@ -31,10 +31,13 @@
             <el-form-item label="入社年月日">
               <el-row type="flex" :gutter="20">
                 <el-col :span="10">
-                  <el-date-picker type="date" v-model="enterDateFrom"/>
+                  <el-date-picker type="date" v-model="enterDate"/>
                 </el-col>
               </el-row>
             </el-form-item>
+            <el-button @click="register" round>
+              登録
+            </el-button>
           </el-form>
         </el-col>
       </el-row>
@@ -55,17 +58,28 @@
           {key: '2', value: '部署2'}
         ],
         age: '',
-        enterDateFrom: '',
-        enterDateTo: '',
-        result: []
+        enterDate: ''
       }
     },
     methods: {
-      search: function () {
-        this.result = [
-          {firstName: 'test1'},
-          {firstName: 'test2'}
-        ]
+      register: function () {
+        const storage = sessionStorage
+
+        const user = {
+          firstName: this.firstName,
+          lastName: this.lastName,
+          post: this.selectedPost,
+          age: this.age,
+          enterDate: this.enterDate
+        }
+
+        if (storage['userList'] === undefined) {
+          storage['userList'] = JSON.stringify([user])
+        } else {
+          const userList = JSON.parse(storage['userList'])
+          userList.push(user)
+          storage['userList'] = JSON.stringify(userList)
+        }
       }
     }
   }
